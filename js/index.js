@@ -20,5 +20,9 @@ var cycle = function(array) {
 };
 
 var display = function(){
+	document.body.style.backgroundColor = colors [count];
 	cycle(colors);
+
+
+
 }
