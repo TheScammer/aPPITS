@@ -6,23 +6,35 @@ var colors = [
 	"violet",
 	"yellow",
 	"orange",
+	"scare"
+
 	];
+
+
+var scarePlay = new Audio('../assets/Scare.mp3');
 
 var count = 0;
 
-var cycle = function(array) {
-	console.log(array[count]);
-	if (count == array.length) {
-		count = 0;
-	} else {
-		count++;	
-	};
-};
+var cycle = function() {
 
-var display = function(){
-	document.body.style.backgroundColor = colors [count];
-	cycle(colors);
+	colorNum = Math.floor(Math.random()*colors.length);
 
-
-
+	if (colors[colorNum] == "scare") {
+		document.body.style.backgroundImage = "url(../assets/scare.png)";
+		scarePlay.play();
+	} else{
+		document.body.style.backgroundColor = colors[colorNum];
+	}
 }
+
+	// console.log(array[count]);
+	// if (count == array.length) {
+	// 	count = 0;
+	// } else {
+	// 	count++;	
+	// };
+;
+
+
+
+
